@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(240, 237, 239);
+  }
+
+  /* ======= MENU =======*/
+  .flex-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 1rem 1rem;
+    background: #e98fb2;
+    
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+        li {
+          list-style-type: none;      
+        }
+    
+        a {
+          text-decoration: none;
+          color: #000;
+          padding: 1rem;
+          font-weight: 800;
+          font-size: 1.2rem;
+          transition: all .3s ease-in-out;
+        }
+
+        a:hover {
+          background: #a33232;
+          padding: .5rem 1.5rem .5rem;
+          /* border-bottom: 5px solid rgb(37, 35, 25);
+          border-top: 5px solid rgb(37, 35, 25); */
+        }
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: .5rem 1.5rem;
+      background-color: #e98fb2;
+      font-size: 1.2rem;
+      border-radius: 2rem;
+      color: #000;
+      transition: all .3s ease-in-out;
+      }
+
+    .buttons a:hover {
+        background-color: #a33232;
+      }
+
+  }
+
+
+
+
+  /* ======== HLAVNÍ OBSAH */
+  .container-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 800px;
+    max-width: 20rem;
+    margin: 1rem;
+  }
+  
+  .form-flex {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form__heading {
+    text-align: center;
+  }
+  
+  .form p {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  #login__input-text, 
+  #input-password,
+  .form__button, 
+  #reg-password-check1, 
+  #reg-password-check2, 
+  #reg-text
+   {
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    margin: 1.5rem 0 1.5px;
+    font-style: italic;
+    background:  rgb(230, 229, 229);
+    border: 0;
+    max-width: 300px;
+  }
+  
+  .password--warning {
+    display: block;
+    color: red;
+  }
+  
+  .form__button--submit {
+    background: #ca7c7c;
+    color: #fff;
+    transition: all .1s;
+  }
+  
+  .form__button:hover {
+    background: #a33232;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .form a {
+    text-decoration: none;
+    color: #e98fb2;
+  }
+
+.all-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: space-around;
+  padding-top: 2rem;
+}
+
+.all-items--admin {
+  justify-content: left;
+}
+
+.all-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.one-button {
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+}
+
+.one-tree-card {
+  width: 200px;
+  height: 100px;
+  border: 1px solid green;
+  box-shadow: 1px 1px 1px grey; 
+}

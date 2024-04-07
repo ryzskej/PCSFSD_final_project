@@ -1,0 +1,13 @@
+{
+    "require": "vyžádat si", 
+    "deployment":  "rozvinutí", 
+    "extend": "rozšířit",
+    "query": "dotaz",
+    "request": "žádost",
+    "dispatch": "odeslání",
+    "statement": "příkaz, nejmenší samostatný prvek programu, co se má provést",
+    "uncought exception": "neodchycená výjimka",
+    "denied": "zamítnuto, odmítnuto, odepřeno",
+    "wireframe": "stručné schéma, jak má aplikace vypadat",
+    "credentials": "pověření, osobní údaje (už. jmeno a heslo)"
+}
