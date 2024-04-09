@@ -16,22 +16,29 @@ class User extends BaseModel
         // zaheshování hesla
         $data["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
 
-        if($this->exists($data["email"])){
-            return header("location: /PCSFSD_final_project/registration?error=email_taken");
+        if ($this->exists($data["email"])) {
+            return false;
         }
 
         $this->database->sql("INSERT INTO users (email, password) VALUES (" . "'" . $data['email'] . "'" . "," . "'" . $data['password'] . "'" . ")");
 
-        header("location: /PCSFSD_final_project/admin");
+        return true;
     }
 
     public function exists(string $email)
     {
         $sql = "SELECT email FROM users WHERE email = '$email'";
-        if (count($this->database->sql($sql)) > 0){
+        if (count($this->database->sql($sql)) > 0) {
             return true;
         } else {
             return false;
         };
+    }
+
+    public function findByEmail($email)
+    {
+        $sql = "SELECT * FROM USERS WHERE email = '$email'";
+        return $this->database->sql($sql);
+
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\controllers;
 
+use Core\Auth;
 use Core\View;
 use App\models\Tree;
 use App\models\User;
@@ -11,19 +12,25 @@ class AdminController
 {
     public $tree;
 
+
     public function __construct()
     {
         $this->tree = new Tree();
     }
 
+    // ověřit, že uživatel je přihlášený
     // používá se i index místo show
     public function show()
     {
-        return View::render("Admin", [
-            "trees" => $this->tree->all()
-        ], [
-            "users" => (new User)->all()
-        ]);
+        if(Auth::user()){
+            return View::render("Admin", [
+                "trees" => $this->tree->all()
+            ], [
+                "users" => (new User)->all()
+            ]);
+        } else {
+            header('location: /PCSFSD_final_project/login');
+        }
     }
 
     public function create()
@@ -31,6 +38,7 @@ class AdminController
         $this->tree->create($_POST);
         header('location: /PCSFSD_final_project/admin');
     }
+
 
     public function deleteTree()
     {

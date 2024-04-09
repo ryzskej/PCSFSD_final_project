@@ -5,9 +5,10 @@
     <div class="container-flex">
       <form action="#" method="post" class="form form-flex">
           <h2 class="form__heading">Admin page</h2>
-        <input id="login__input-text" type="text" placeholder="Username" name="login" required>
+        <input id="login__input-text" type="text" placeholder="Username" name="email" required>
         <input id="input-password" type="password" placeholder="Password" name="password" required>
         <p class="password--warning">Heslo musí být nejméně 5 znaků dlouhé</p>
+        <?php if(isset($_GET['error'])){echo "Špatné mail či heslo";} ?>
         <button class="form__button form__button--submit">Login</button>
         <p>Nemáte účet? <a href="registration">Vytvořte si ho</a></p>
       </form>

@@ -12,7 +12,7 @@ use App\controllers\OvocnestromyController;
 use App\controllers\RegistrationController;
 
 // inicializuji objekt Router   
-$router = new Router();     
+$router = new Router();
 
 // pouze do pole routes přidám pole s daty níže, nic jiného metoda addRoute nedělá, pouze přidává do pole
 $router->addRoute("/PCSFSD_final_project/", DashboardController::class, "show", "GET");
@@ -20,7 +20,6 @@ $router->addRoute("/PCSFSD_final_project/", DashboardController::class, "create"
 
 $router->addRoute("/PCSFSD_final_project/login", LoginController::class, "show", "GET");
 $router->addRoute("/PCSFSD_final_project/login", LoginController::class, "create", "POST");
-
 $router->addRoute("/PCSFSD_final_project/registration", RegistrationController::class, "show", "GET");
 $router->addRoute("/PCSFSD_final_project/registration", RegistrationController::class, "create", "POST");
 

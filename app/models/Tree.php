@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\models;
 
@@ -18,24 +18,24 @@ class Tree extends BaseModel
 
     public function create($data = [])
     {
-        $this->database->sql("INSERT INTO trees (tree, height, description, user_id, whereIsMature) VALUES ("."'".$data['firstNameT']."'".","."'".$data['heightT']."'".", "."'".$data['descriptionT']."'".", 0, "."'".$data['whereIsMature']."'".")");
+        $this->database->sql("INSERT INTO trees (tree, height, description, user_id, whereIsMature) VALUES (" . "'" . $data['firstNameT'] . "'" . "," . "'" . $data['heightT'] . "'" . ", " . "'" . $data['descriptionT'] . "'" . ", 0, " . "'" . $data['whereIsMature'] . "'" . ")");
     }
 
     public function deleteTree($id)
     {
-        $this->database->sql("DELETE FROM trees WHERE id = "."'".$id."'");
+        $this->database->sql("DELETE FROM trees WHERE id = " . "'" . $id . "'");
     }
 
     public function update(array $post)
     {
-           Debug::dump($post);
-        $sql = 'UPDATE trees SET tree = "'.$post['firstNameT'].'", height = "'.$post['heightT'].'", description = "'.$post['descriptionT'].'" WHERE id = "'.$post['id'].'"';
+        Debug::dump($post);
+        $sql = 'UPDATE trees SET tree = "' . $post['firstNameT'] . '", height = "' . $post['heightT'] . '", description = "' . $post['descriptionT'] . '" WHERE id = "' . $post['id'] . '"';
 
         $this->database->sql($sql);
     }
 
     public function findTree($id)
     {
-        return $this->database->sql("SELECT * FROM trees where id = "."'".$id."'");
+        return $this->database->sql("SELECT * FROM trees where id = " . "'" . $id . "'");
     }
 }

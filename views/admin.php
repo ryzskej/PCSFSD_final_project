@@ -51,9 +51,8 @@
         foreach ($users as $value) {
             echo '
             <div class="one-tree-card">
-                <h3>Jméno: ' . $value["username"] . '</h3>
-                <p>Pohlaví: ' . $value["sex"] . '
-                <p>ID: ' . $value["user_id"] . '<br>
+                <p>ID: ' . $value["id"] . '<br>
+                <p>ID: ' . $value["email"] . '<br>
                 <button>Smazat</button>
             </div>
         ';

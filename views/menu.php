@@ -11,6 +11,6 @@
         <div class="buttons">
             <a href="registration">Registrovat</a>
             <a href="login">Přihlásit se</a>
-            <a href="#">Admin sekce</a>
+            <a href="admin">Admin sekce</a>
         </div>
     </div>

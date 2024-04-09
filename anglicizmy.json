@@ -1,13 +1,16 @@
 {
-    "require": "vyžádat si", 
-    "deployment":  "rozvinutí", 
+    "require": "vyžádat si",
+    "deployment": "rozvinutí",
     "extend": "rozšířit",
     "query": "dotaz",
     "request": "žádost",
+    "response": "odpověď, odezva, reakce (celý life cyklus aplikace je request - response)",
     "dispatch": "odeslání",
     "statement": "příkaz, nejmenší samostatný prvek programu, co se má provést",
     "uncought exception": "neodchycená výjimka",
     "denied": "zamítnuto, odmítnuto, odepřeno",
     "wireframe": "stručné schéma, jak má aplikace vypadat",
-    "credentials": "pověření, osobní údaje (už. jmeno a heslo)"
+    "credentials": "uživatelské údaje jako uživatelské jméno a heslo, email",
+    "session": "data, pole, kam si můžu naskládat cokoliv a je to drženo delší dobu než jeden request (by default se drží   ta session 24 minut. Jedná se o superglobální proměnnou. Session se drží na serveru a proto k nim nikdo nemá přístup, cookie je dostupná u užiatele v prohlížeči",
+    "remember token": "jednorázový zaheshovaný token/řetězec, který se používá k autentizaci uživatele při při implementaci funkcionality 'remember me', tento token obvykle uložen v db spolu s informacemi uživatele. Když se uživatel vrátí do aplikace, je remember token vrácen do prohlížeče jako součást cookie."
 }
