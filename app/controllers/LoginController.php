@@ -38,4 +38,10 @@ class LoginController
         // pokud nesedí mail nebo heslo, vrať chybovou hlášku
         return header('location: login?error=wrond_credentials');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return header("location: /PCSFSD_final_project/");
+    }
 }

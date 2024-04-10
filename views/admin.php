@@ -2,7 +2,7 @@
 
 
 <body>
-
+    <a href="admin/logout">Odhlásit se</a>
     <h1>Stromy</h1>
     <div class="all-items all-items--admin">
 

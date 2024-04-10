@@ -31,6 +31,7 @@ $router->addRoute("/PCSFSD_final_project/jedlekere", JedlekereController::class,
 
 $router->addRoute("/PCSFSD_final_project/admin", AdminController::class, "create", "POST");
 $router->addRoute("/PCSFSD_final_project/admin", AdminController::class, "show", "GET");
+$router->addRoute("/PCSFSD_final_project/admin/logout", LoginController::class, "logout", "GET");
 $router->addRoute("/PCSFSD_final_project/admin/delete", AdminController::class, "deleteTree", "GET");
 
 $router->addRoute("/PCSFSD_final_project/admin/update", UpdateController::class, "show", "POST");
