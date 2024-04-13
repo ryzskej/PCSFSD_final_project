@@ -10,9 +10,8 @@ class UpdateController
 {
     public function show()
     {
-        // echo $_POST["id-tree"];
         return View::render("Update", [
-            "oneTree" => (new Tree)->findTree($_POST["id-tree"])
+            "oneTree" => (new Tree)->findTree($_POST["id"])
         ]);
     }
 

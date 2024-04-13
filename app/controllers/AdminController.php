@@ -12,7 +12,6 @@ class AdminController
 {
     public $tree;
 
-
     public function __construct()
     {
         $this->tree = new Tree();
@@ -42,7 +41,7 @@ class AdminController
 
     public function deleteTree()
     {
-        $this->tree->deleteTree($_GET["id-tree"]);
+        $this->tree->deleteTree($_GET["id"]);
         header('location: /PCSFSD_final_project/admin');
     }
 }

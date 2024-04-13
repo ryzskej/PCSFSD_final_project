@@ -11,14 +11,14 @@ class Tree extends BaseModel
         return $this->database->sql('SELECT * FROM trees');
     }
 
-    public function whereIsMature()
+    public function ripeness()
     {
-        return $this->database->sql('SELECT whereIsMature FROM trees where whereIsMature = "podzimni"');
+        return $this->database->sql('SELECT ripeness FROM trees where ripeness = "podzimni"');
     }
 
     public function create($data = [])
     {
-        $this->database->sql("INSERT INTO trees (tree, height, description, user_id, whereIsMature) VALUES (" . "'" . $data['firstNameT'] . "'" . "," . "'" . $data['heightT'] . "'" . ", " . "'" . $data['descriptionT'] . "'" . ", 0, " . "'" . $data['whereIsMature'] . "'" . ")");
+        $this->database->sql("INSERT INTO trees (type, name, short_descr, ripeness) VALUES (" . "'" . $data['type'] . "'" . ", " . "'" . $data['name'] . "'" . ", " . "'" . $data['short_descr'] . "'" . ", " . "'" . $data['ripeness'] . "'" . ")");
     }
 
     public function deleteTree($id)
@@ -28,8 +28,7 @@ class Tree extends BaseModel
 
     public function update(array $post)
     {
-        Debug::dump($post);
-        $sql = 'UPDATE trees SET tree = "' . $post['firstNameT'] . '", height = "' . $post['heightT'] . '", description = "' . $post['descriptionT'] . '" WHERE id = "' . $post['id'] . '"';
+        $sql = 'UPDATE trees SET name = "' . $post['name'] . '", short_descr = "' . $post['short_descr'] . '", ripeness = "' . $post['ripeness'] . '" WHERE id = "' . $post['id'] . '"';
 
         $this->database->sql($sql);
     }
@@ -37,5 +36,20 @@ class Tree extends BaseModel
     public function findTree($id)
     {
         return $this->database->sql("SELECT * FROM trees where id = " . "'" . $id . "'");
+    }
+    
+    public function findType($type)
+    {
+        return $this->database->sql("SELECT * FROM trees where type = " . "'" . $type . "'");
+    }
+
+    public function filterBy(array $data)
+    {
+        return $this->database->sql('SELECT * from trees where type = "' . $data['type'] . '" and ripeness = "' . $data['ripeness'] . '" and chut = "' . $data['chut'] . '"');
+    }
+
+    public function filterForm()
+    {
+        return $this->database->sql("SELECT * FROM trees where form = 'keř'");
     }
 }

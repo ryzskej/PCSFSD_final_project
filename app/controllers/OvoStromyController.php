@@ -4,20 +4,20 @@ namespace App\controllers;
 
 use Core\View;
 use App\models\Tree;
+use App\utils\Debug;
 
-
-class JedleKereController
+class OvoStromyController
 {
     public function show()
     {
-        return View::render("jedle-kere", 
-            ["trees" => (new Tree)->filterForm()]
+        return View::render("ovocne-stromy", 
+            ["trees" => (new Tree)->all()]
         );
     }
 
     public function filter()
     {
-        return View::render("findTypeBush", 
+        return View::render("findTypeTree", 
             ["trees" => (new Tree)->findType($_GET["type"])]
         );
     }

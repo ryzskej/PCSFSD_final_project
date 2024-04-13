@@ -6,10 +6,10 @@ use App\utils\Debug;
 
 class View
 {
-    public static function render($view_name, $data = [], $user = [])
+    public static function render($view_name, $tree = [], $user = [])
     {
 
-        foreach($data ?? [] as $variable_name => $value){
+        foreach($tree ?? [] as $variable_name => $value){
             $$variable_name = $value;           // hodnota se přiřadí do nově vytvořené dynamické proměnné
         }
         

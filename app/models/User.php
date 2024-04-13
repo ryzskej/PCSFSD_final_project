@@ -6,14 +6,15 @@ use App\utils\Debug;
 
 class User extends BaseModel
 {
+    ////////////////////////////////////////////////////
     public function all()
     {
         return $this->database->sql('SELECT * FROM users');
     }
 
+    ////////////////////////////////////////////////////
     public function create($data)
     {
-        // zaheshování hesla
         $data["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
 
         if ($this->exists($data["email"])) {
@@ -25,6 +26,7 @@ class User extends BaseModel
         return true;
     }
 
+    ////////////////////////////////////////////////////
     public function exists(string $email)
     {
         $sql = "SELECT email FROM users WHERE email = '$email'";
@@ -35,7 +37,8 @@ class User extends BaseModel
         };
     }
 
-    public function findByEmail($email)
+    ////////////////////////////////////////////////////
+    public function findByEmail(string $email)
     {
         $sql = "SELECT * FROM USERS WHERE email = '$email'";
         return $this->database->sql($sql);

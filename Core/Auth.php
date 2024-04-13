@@ -10,11 +10,13 @@ class Auth
         return $_SESSION['id'] ?? null;
     }
 
+    ////////////////////////////////////////////////////
     public static function login($id)
     {
         $_SESSION['id'] = $id;
     }
 
+    ////////////////////////////////////////////////////
     public static function logout()
     {
         session_unset();

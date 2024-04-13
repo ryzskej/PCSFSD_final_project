@@ -15,7 +15,7 @@ class Database
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "test";
+        $dbname = "databaze_ovocnych_drevin";
 
         $connection = new mysqli($servername, $username, $password, $dbname);
 

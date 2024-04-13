@@ -2,8 +2,6 @@
 
 namespace Core;
 
-use App\utils\Debug;
-
 class Router 
 {
 
