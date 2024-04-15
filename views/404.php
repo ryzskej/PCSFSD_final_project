@@ -1,10 +1,10 @@
-<?php Core\View::render("header")?>
-<!-- výše je zkrácený zápis pro use Core\View; View::render("header");  -->
+<?php 
+Core\View::render("header", ["title" => "404"]);
+Core\View::render("menu");
+?>
 
-<?php Core\View::render("menu")?>
+<p class="no-results">Je nám líto, stránka nebyla nenalezena :-(</p>
 
-
-Je nám líto, stránka nenalezena.
-
-</body>
-</html>
+<?php 
+Core\View::render("footer");
+?>

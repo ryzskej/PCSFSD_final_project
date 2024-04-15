@@ -8,10 +8,12 @@ use App\models\Tree;
 
 class JedleKereController
 {
+    public $kindOfBush = ["rybíz", "angrešt", "maliny", "jahody", "ostružiny", "josta", "bez", "hlošina"];
+
     public function show()
     {
         return View::render("jedle-kere", 
-            ["trees" => (new Tree)->filterForm()]
+            ["trees" => (new Tree)->filterForm("keř")]
         );
     }
 

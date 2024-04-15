@@ -8,10 +8,12 @@ use App\utils\Debug;
 
 class OvoStromyController
 {
+    public $kindOfTree = ["jabloň", "hrušeň", "třešeň", "višeň", "broskvoň", "meruňka", "švestka", "skořápkovina"];
+
     public function show()
     {
         return View::render("ovocne-stromy", 
-            ["trees" => (new Tree)->all()]
+            ["trees" => (new Tree)->filterForm("strom")]
         );
     }
 

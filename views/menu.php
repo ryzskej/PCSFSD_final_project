@@ -6,6 +6,9 @@
                 <li><a href="ovocne-stromy">Ovocné stromy</a></li>
                 <li><a href="jedle-kere">Jedlé keře</a></li>
                 <li><a href="filter">Filtrovat podle</a></li>
+                <form action="findInDatabase">
+                    <input type="text" name="findInDatabase" class="findInDatabase" placeholder="Hledej v databázi">
+                </form>
             </ul>
         </nav>
         

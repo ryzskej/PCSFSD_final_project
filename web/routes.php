@@ -3,12 +3,13 @@
 // require "./app/controllers/DashboardController.php" //||\\ nebo jednoduše viz níže
 use Core\Router;
 // use App\controllers\OvocnestromyController;
-use App\controllers\JedleKereController;
+use App\controllers\DetailController;
 use App\controllers\AdminController;
 use App\controllers\LoginController;
 use App\controllers\FilterController;
 use App\controllers\UpdateController;
 use App\controllers\DashboardController;
+use App\controllers\JedleKereController;
 use App\controllers\OvoStromyController;
 use App\controllers\RegistrationController;
 
@@ -42,7 +43,9 @@ $router->addRoute("/PCSFSD_final_project/findTypeBush", JedleKereController::cla
 
 $router->addRoute("/PCSFSD_final_project/filter", FilterController::class, "show", "GET");
 $router->addRoute("/PCSFSD_final_project/results", FilterController::class, "filter", "GET");
+$router->addRoute("/PCSFSD_final_project/findInDatabase", FilterController::class, "findInDatabase", "GET");
 
+$router->addRoute("/PCSFSD_final_project/detail", DetailController::class, "showDetail", "GET");
 
 // teprve tady se spouští kód, který vezme aktuální url, porovná ji s routy a poté buď vyhodí dané view, nebo 404
 $router->run();

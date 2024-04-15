@@ -31,4 +31,11 @@ class FilterController
             "results", ["trees" => $trees]
         );
     }
+
+    public function findInDatabase()
+    {
+        return View::render(
+            "findInDatabase", ["trees" => $this->tree->findInDatabase($_GET["findInDatabase"])]
+        );
+    }
 }
