@@ -8,20 +8,6 @@
     } ?>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- původní verze bez použití foreach -->
 
     <!-- <form action="/PCSFSD_final_project/findTypeTree">
