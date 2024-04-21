@@ -42,6 +42,5 @@ class User extends BaseModel
     {
         $sql = "SELECT * FROM USERS WHERE email = '$email'";
         return $this->database->sql($sql);
-
     }
 }

@@ -17,11 +17,9 @@ class AdminController
         $this->tree = new Tree();
     }
 
-    // ověřit, že uživatel je přihlášený
-    // používá se i index místo show
     public function show()
     {
-        if(Auth::user()){
+        if (Auth::user()) {
             return View::render("Admin", [
                 "trees" => $this->tree->all()
             ], [
@@ -35,6 +33,8 @@ class AdminController
     public function create()
     {
         $this->tree->create($_POST);
+        Debug::dump($_POST);
+        die();
         header('location: /PCSFSD_final_project/admin');
     }
 

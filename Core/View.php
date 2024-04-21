@@ -9,11 +9,11 @@ class View
     public static function render($view_name, $tree = [], $user = [])
     {
 
-        foreach($tree ?? [] as $variable_name => $value){
+        foreach ($tree ?? [] as $variable_name => $value) {
             $$variable_name = $value;           // hodnota se přiřadí do nově vytvořené dynamické proměnné
         }
-        
-        foreach($user ?? [] as $variable_name => $value){
+
+        foreach ($user ?? [] as $variable_name => $value) {
             $$variable_name = $value;           // hodnota se přiřadí do nově vytvořené dynamické proměnné
         }
 

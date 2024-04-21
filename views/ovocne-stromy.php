@@ -1,13 +1,32 @@
 <?php
-
-use Core\View;
-use App\utils\Debug;
-
 Core\View::render("header", ["title" => "Ovocne stromy"]);
 Core\View::render("menu");
+Core\View::render("all-buttons", ["items" => App\models\Tree::$kindOfTree], ["kindOf" => "ovocne-stromy"]);
 ?>
 
-<div class="all-buttons">
+<div class="all-items">
+    <?php foreach ($trees as $key => $value) {echo Core\View::render("card", ["value" => $value]);} ?>
+</div>
+
+<?php Core\View::render("footer") ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- původní verze -->
+
+<!-- <div class="all-buttons">
     <form action="/PCSFSD_final_project/findTypeTree">
         <input name="type" type="hidden" value="jabloň">
         <button class="one-button" type="submit" class="button--success">Jabloně</button>
@@ -48,19 +67,4 @@ Core\View::render("menu");
         <button class="one-button" type="submit" class="button--success">Skořápkoviny</button>
     </form>
         
-</div>
-
-
-<div class="all-items">
-    <?php
-
-    foreach ($trees as $key => $value) {
-        echo View::render("card", ["value" => $value]);
-    }
-
-    ?>
-</div>
-
-<?php Core\View::render("footer") ?>
-
-</html>
+</div> -->

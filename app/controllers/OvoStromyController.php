@@ -8,19 +8,21 @@ use App\utils\Debug;
 
 class OvoStromyController
 {
-    public $kindOfTree = ["jabloň", "hrušeň", "třešeň", "višeň", "broskvoň", "meruňka", "švestka", "skořápkovina"];
-
     public function show()
     {
-        return View::render("ovocne-stromy", 
-            ["trees" => (new Tree)->filterForm("strom")]
-        );
-    }
+        $form = "strom";
+        $type = isset($_GET['type']) ? $_GET['type'] : false;
 
-    public function filter()
-    {
-        return View::render("findTypeTree", 
-            ["trees" => (new Tree)->findType($_GET["type"])]
-        );
+        if ($type) {
+            return View::render(
+                "ovocne-stromy",
+                ["trees" => (new Tree)->filterType($form, $type)]
+            );
+        } else {
+            return View::render(
+                "ovocne-stromy",
+                ["trees" => (new Tree)->findForm($form)]
+            );
+        }
     }
 }

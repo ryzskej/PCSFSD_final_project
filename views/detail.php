@@ -21,6 +21,4 @@ Core\View::render("menu");
     <p><b>Celkové zhodnocení:</b> <?php echo $trees["evaluation"] ?></p>
 </article>
 
-<?php 
-Core\View::render("footer");
-?>
+<?php Core\View::render("footer");?>

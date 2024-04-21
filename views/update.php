@@ -22,9 +22,7 @@ echo '<form action="/PCSFSD_final_project/admin/updated" class="form" method="po
             <button type="submit">Editovat</button>
             </form>
             '
-
 ?>
 
 </body>
-
 </html>

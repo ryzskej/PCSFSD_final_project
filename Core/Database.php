@@ -6,12 +6,16 @@ use mysqli;
 
 class Database
 {
-
     protected $connection;
 
     // připojení k databázi, metoda co mi spojuje objekt Database s databází z tablePlus
     public function __construct()
     {
+        // $servername = "a059um.forpsi.com";
+        // $username = "f178749";
+        // $password = "fmfJ3bph";
+        // $dbname = "f178749";
+        
         $servername = "localhost";
         $username = "root";
         $password = "";

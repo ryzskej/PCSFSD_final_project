@@ -11,7 +11,8 @@ class DetailController
     public function showDetail()
     {
         return View::render(
-            "detail", ["trees" => (new Tree)->findTree($_GET["id"])]
+            "detail",
+            ["trees" => (new Tree)->findTree($_GET["id"])]
         );
     }
 }

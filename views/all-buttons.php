@@ -1,12 +1,30 @@
-<?php
-
-Core\View::render("header", ["title" => "Filtr ovocných dřevin"]);
-Core\View::render("menu");
-?>
-
 <div class="all-buttons">
+    <?php foreach($items as $key => $value){
+        echo '
+        <form action="/PCSFSD_final_project/' . $kindOf . '">
+            <input name="type" type="hidden" value="' . $value . '">
+            <button class="one-button" type="submit" class="button--success">' . $value . '</button>
+        </form>';
+    } ?>
+</div>
 
-    <form action="/PCSFSD_final_project/findTypeTree">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- původní verze bez použití foreach -->
+
+    <!-- <form action="/PCSFSD_final_project/findTypeTree">
         <input name="type" type="hidden" value="jabloň">
         <button class="one-button" type="submit" class="button--success">Jabloně</button>
     </form>
@@ -42,25 +60,6 @@ Core\View::render("menu");
     </form>
 
     <form action="/PCSFSD_final_project/findTypeTree">
-        <input name="type" type="hidden" value="skořápkoviny">
+        <input name="type" type="hidden" value="skořápkovina">
         <button class="one-button" type="submit" class="button--success">Skořápkoviny</button>
-    </form>
-
-
-</div>
-
-
-<div class="all-items">
-
-    <?php
-    foreach ($trees as $key => $value) {
-        Core\View::render("card", ["value" => $value]);
-    }
-
-    ?>
-
-</div>
-
-<?php 
-Core\View::render("footer"); 
-?>
+    </form> -->
