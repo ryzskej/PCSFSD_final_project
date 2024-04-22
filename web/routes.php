@@ -38,7 +38,6 @@ $router->addRoute("/PCSFSD_final_project/ovocne-stromy", OvoStromyController::cl
 $router->addRoute("/PCSFSD_final_project/jedle-kere", JedleKereController::class, "show", "GET");
 
 $router->addRoute("/PCSFSD_final_project/filter", FilterController::class, "show", "GET");
-// $router->addRoute("/PCSFSD_final_project/results", FilterController::class, "filter", "GET");
 $router->addRoute("/PCSFSD_final_project/findInDatabase", FilterController::class, "findInDatabase", "GET");
 
 $router->addRoute("/PCSFSD_final_project/detail", DetailController::class, "showDetail", "GET");

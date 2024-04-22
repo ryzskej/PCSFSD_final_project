@@ -2,12 +2,12 @@
 <div class="flex-menu">
         <nav>
             <ul>
-                <li><a href="/">Domů</a></li>
-                <li><a href="ovocne-stromy">Ovocné stromy</a></li>
-                <li><a href="jedle-kere">Jedlé keře</a></li>
-                <li><a href="filter">Filtrovat podle</a></li>
-                <form action="findInDatabase">
-                    <input type="text" name="findInDatabase" class="findInDatabase" placeholder="Hledej v databázi">
+                <li><a href="/PCSFSD_final_project/">Domů</a></li>
+                <li><a href="/PCSFSD_final_project/ovocne-stromy">Ovocné stromy</a></li>
+                <li><a href="/PCSFSD_final_project/jedle-kere">Jedlé keře</a></li>
+                <li><a href="/PCSFSD_final_project/filter">Filtrovat podle</a></li>
+                <form action="/PCSFSD_final_project/findInDatabase">
+                    <input type="text" name="search" class="findInDatabase" placeholder="Hledej v databázi">
                 </form>
             </ul>
         </nav>

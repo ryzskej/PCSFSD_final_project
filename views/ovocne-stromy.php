@@ -10,20 +10,6 @@ Core\View::render("all-buttons", ["items" => App\models\Tree::$kindOfTree], ["ki
 
 <?php Core\View::render("footer") ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- původní verze -->
 
 <!-- <div class="all-buttons">

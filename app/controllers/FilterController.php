@@ -54,7 +54,7 @@ class FilterController
     {
         return View::render(
             "findInDatabase",
-            ["trees" => $this->tree->findInDatabase($_GET["findInDatabase"])]
+            ["trees" => $this->tree->findInDatabase($_GET["search"])]
         );
     }
 }
