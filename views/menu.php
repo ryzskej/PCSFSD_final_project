@@ -13,10 +13,15 @@
         </nav>
         
         <div class="buttons">
-            <a href="admin">Admin sekce</a>
+            <a href="admin">Admin</a>
             <a href="about-us">O databázi</a>   
             <!-- nahodit do routes tuhle cestu nahore about-us -->
         </div>
     </div>
 
+    <div class="queries-menu">
+        <img class="queries-menu__img" src="./resources/img/hamburgermenu.png" alt="hamburger menu">
+    </div>
+
     <div class="container">
+    <script src="./resources/switcherMenu.js"></script>

@@ -1,0 +1,36 @@
+@media screen and (max-width: 1000px) {
+    
+    .queries-menu {
+        display: flex;
+        justify-content: right;
+        width: 100%;
+        background-color: #3a3a3a;
+    }
+    
+    .queries-menu__img {
+        width: 40px;
+        padding: .2rem;
+    }
+    
+    .flex-menu {
+        display: none;
+    }
+    
+    .full-detail {
+        margin: 1rem 1rem;
+    }
+
+    .one-section {
+        display: block;
+        margin: 1rem;
+    }
+
+    .one-section__p {
+        width: 100%;
+      }
+      
+      .one-section__img {
+        height: 100%;
+        width: 100%;
+      }
+}

@@ -2,15 +2,19 @@
 
 namespace App\models;
 
+use App\utils\Debug;
+
 class Tree extends BaseModel
 {
     public static $kindOfTree = ["jabloň", "hrušeň", "třešeň", "višeň", "broskvoň", "meruňka", "švestka", "kdoule", "oskeruše", "kaki", "muďoul", "skořápkovina"];
     
     public static $kindOfBush = ["rybíz", "angrešt", "maliny", "jahody", "ostružiny", "josta", "bez", "hlošina", "borůvka", "brusinka", "hroznové víno", "moruše", "muchovník", "trnka", "fík", "granátové jablko", "mišpule", "kiwi"];
     
-    public static $category = ["name" => "jméno", "short_descr" => "krátký popisek", "origin" => "původ", "synonyms" => "synonyma", "growth" => "růst", "bloom" => "kvetení", "fruit" => "plod", "flavor" => "chuť" , "harvest" => "sklizeň", "ripeness" => "konzumní zralost", "fruitfulness" => "plodnost", "resilience" => "odolnost", "storeability" => "skladovatelnost", "utilization" => "využití", "evaluation" => "celkové hodnocení"];
+    public static $category = ["name" => "jméno", "short_descr" => "krátký popisek", "origin" => "původ", "synonyms" => "synonyma", "growth" => "růst", "bloom" => "kvetení", "fruit" => "plod", "flavor" => "chuť" , "harvest" => "sklizeň", "ripeness" => "konzumní zralost", "fruitfulness" => "plodnost", "resilience" => "odolnost", "storeability" => "skladovatelnost", "insolation" => "míra oslunění", "utilization" => "využití", "evaluation" => "celkové hodnocení"];
 
     public static $month = ["leden", "únor", "březen", "duben", "květen", "červen", "červenec", "srpen", "září", "říjen", "listopad", "prosinec"];
+
+    public static $insolation = ["plné slunce", "polostín", "bez oslunění"];
 
     // angrešt, rybíz, josta, malina, ostružina, borůvka, jahoda, brusinka, hroznové víno, moruše, muchovník, trnka, mišpule, kiwi, fík, granátové jablko, bez, hlošina, rakytník, jeřáb, zimolez, dřín, kustovnice, šicha, hloh, myrobalán, ugni molinae (čilská myrta), kalina
 
@@ -48,9 +52,11 @@ class Tree extends BaseModel
         // return $this->database->sql("INSERT INTO trees (type, name, short_descr, ripeness) VALUES (" . "'" . $data['type'] . "'" . ", " . "'" . $data['name'] . "'" . ", " . "'" . $data['short_descr'] . "'" . ", " . "'" . $data['ripeness'] . "'" . ")");
     }
 
-    public function deleteTree($id)
+    public function deleteTree(int $id)
     {
-        return $this->database->sql("DELETE FROM trees WHERE id = " . "'" . $id . "'");
+        $sql = "DELETE FROM trees WHERE id = ?";
+        return $this->database->sql($sql, $id);
+        // return $this->database->sql("DELETE FROM trees WHERE id = " . "'" . $id . "'");
     }
 
     public function update(array $post)
@@ -62,8 +68,9 @@ class Tree extends BaseModel
 
     ///////////////////////////////////////////////////////////
 
-    public function findTree($id)
+    public function findTree(int $id)
     {
+        // nahoře je přepsáno do parametrizovaného dotazu, jinak níže bez ochrany
         return $this->database->sql("SELECT * FROM trees where id = " . "'" . $id . "'")[0];
     }
 
@@ -71,10 +78,13 @@ class Tree extends BaseModel
 
     public function filterType($form, $type)
     {
-        $sql = "SELECT * FROM trees WHERE form = '$form' and type = '$type'";
-        return $this->database->sql($sql);
-    }
+        $sql = "SELECT * FROM trees WHERE form = ? and type = ?";
+        $params = array($form, $type);
+        return $this->database->sql($sql, $params);
 
+        // $sql = "SELECT * FROM trees WHERE form = '$form' and type = '$type'";
+        // return $this->database->sql($sql);
+    }
 
 
 
@@ -88,8 +98,9 @@ class Tree extends BaseModel
     {
         $type = $data["type"] == 'vše' ? '%' : '%' . $data["type"] . '%';
         $ripeness = $data["ripeness"] == 'vše' ? '%' : '%' . $data["ripeness"] . '%';
+        $insolation = $data["insolation"] == 'vše' ? '%' : '%' . $data["insolation"] . '%';
 
-        $sql = "SELECT * FROM trees WHERE type LIKE '$type' and ripeness_filter LIKE '$ripeness'";
+        $sql = "SELECT * FROM trees WHERE type LIKE '$type' and ripeness_filter LIKE '$ripeness' and insolation LIKE '$insolation'";
 
         return $this->database->sql($sql);
 

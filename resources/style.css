@@ -14,6 +14,10 @@ body {
 
 /* ======= MENU =======*/
 
+.queries-menu {
+  display: none;
+}
+
 .header-img {
   height: 20vh;
   width: 100%;
@@ -28,6 +32,7 @@ body {
 .header-descr {
   font-size: 4rem;
   color: #f5f5f5;
+  text-align: center;
 
 }
 
@@ -119,12 +124,12 @@ body {
   margin-top: 1rem;
 }
 
-#login__input-text,
-#input-password,
 .form__button,
-#reg-password-check1,
-#reg-password-check2,
-#reg-text {
+#login-email,
+#login-password,
+#reg-email, 
+#reg-password1,
+#reg-password2 {
   padding: .5rem 1rem;
   border-radius: 1rem;
   font-size: 1rem;
@@ -135,7 +140,7 @@ body {
   max-width: 300px;
 }
 
-.password--warning {
+.credential--warning {
   display: none;
   color: red;
 }
@@ -247,6 +252,7 @@ body {
 .one-section__img {
   border-radius: .5rem;
   width: 47%;
+  height: 100%;
 }
 
 /* ===== DETAIL OF TREE ===== */
@@ -254,8 +260,9 @@ body {
 .full-detail {
   max-width: 800px;
   margin: 2rem auto;
+  padding: 1rem;
   box-shadow: 0px 0px 15px grey;
-  
+
   h1 {
     text-align: center;
     font-size: 3rem;
@@ -295,6 +302,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: .3rem;
+}
+
+.show-selected {
+  margin-top: 1rem;
 }
 
 /* ===== FOOTER ======*/
